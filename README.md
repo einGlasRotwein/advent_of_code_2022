@@ -20,19 +20,23 @@ day was about, along with some stats. Completion time refers to the time
 it took me to complete the puzzle since release (part 1, and part 2 in
 brackets), as tracked on the Advent of Code website[^1]. Next is my rank
 for the puzzle on that day (part 1 (part 2)), and finally the runtime of
-my code. It’s a crude measure of runtime, where I simply store
-`Sys.time()` at the beginning of my script, and then compute the
-difference to the current `Sys.time()` after the solution of part 1 and
-2. I run both parts back to back, i.e. the entire code of part 1 will
-run before part 2 is run, so the runtime of part 2 will always be
-longer. (In most cases, at least part of the code for part 1 will be
-used for part 2 as well.)
+my code. It’s a crude measure of runtime[^2], where I simply calculate
+the difference in `Sys.time()` at the beginning and the end of part 1,
+and the beginning and end of part 2 . That means in some occasions, the
+runtime for part 2 will be much shorter because part of the code needed
+to solve part 2 was already run in part 1 .
 
-| Day | Title            | Completion Time     | Rank        | Runtime         |
-|-----|------------------|---------------------|-------------|-----------------|
-| 1   | Calorie Counting | 00:05:11 (00:07:02) | 2767 (2329) | 8.51 (10.14) ms |
+| Day | Title               | Completion Time     | Rank        | Runtime          |
+|-----|---------------------|---------------------|-------------|------------------|
+| 1   | Calorie Counting    | 00:05:11 (00:07:02) | 2767 (2329) | 9.34 (0.88) ms   |
+| 2   | Rock Paper Scissors | 00:17:34 (00:24:30) | 7120 (6282) | 13.54 (12.02) ms |
 
 [^1]: For the first puzzle, I got up when it was released (6 am where I
     live, so manageable) to maybe have a shot at the leaderboard. Only
     the first 100 people to solve the puzzle get points. Let’s just say
     that 5 min completion time is too slow for that :-D
+
+[^2]: I know these stats are basically meaningless for anyone else’s
+    computer, but to put things into perspective, here are my computer
+    stats: Razer Blade 15 Base Model, Intel Core i7-10750H CPU @
+    2.60GHz, 259 Mhz, 6 Cores, 12 Logical Processors, 16 GB RAM
