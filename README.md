@@ -30,7 +30,7 @@ to solve part 2 was already run in part 1 .
 |-----|-------------------------|---------------------|-------------|------------------|
 | 1   | Calorie Counting        | 00:05:11 (00:07:02) | 2767 (2329) | 9.34 (0.88) ms   |
 | 2   | Rock Paper Scissors     | 00:17:34 (00:24:30) | 7120 (6282) | 13.54 (12.02) ms |
-| 3   | Rucksack Reorganization | 00:17:28 (00:29:45) | 6247 (6570) | 13.67 (9.34)     |
+| 3   | Rucksack Reorganization | 00:17:28 (00:29:45) | 6247 (6570) | 13.67 (9.34) ms  |
 
 [^1]: For the first puzzle, I got up when it was released (6 am where I
     live, so manageable) to maybe have a shot at the leaderboard. Only
