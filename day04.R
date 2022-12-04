@@ -26,7 +26,8 @@ overlapping <-
     elf1 <- as.numeric(x[1]):as.numeric(x[2])
     elf2 <- as.numeric(x[3]):as.numeric(x[4])
     
-    any(elf1 %in% elf2) | any(elf2 %in% elf1)
+    any(elf1 %in% elf2)
   })
 
 sum(overlapping)
+# 779
