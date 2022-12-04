@@ -1,17 +1,6 @@
 README
 ================
 
-    ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
-
-    ✔ ggplot2 3.3.6      ✔ purrr   0.3.4 
-    ✔ tibble  3.1.8      ✔ dplyr   1.0.10
-    ✔ tidyr   1.2.0      ✔ stringr 1.4.0 
-    ✔ readr   2.1.2      ✔ forcats 0.5.1 
-
-    ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-    ✖ dplyr::filter() masks stats::filter()
-    ✖ dplyr::lag()    masks stats::lag()
-
 # Advent of Code 2022
 
 This repo contains my solutions for the [Advent of
@@ -43,6 +32,16 @@ to solve part 2 was already run in part 1 .
 | 2   | Rock Paper Scissors     | 00:17:34 (00:24:30) | 7120 (6282) | 13.54 (12.02) ms |
 | 3   | Rucksack Reorganization | 00:17:28 (00:29:45) | 6247 (6570) | 13.67 (9.34) ms  |
 | 4   | Camp Cleanup            | 00:06:35 (00:07:24) | 2348 (1292) | 19.91 (13.86) ms |
+
+## Data Viz
+
+Here are some plots for the puzzles.
+
+### Day 1
+
+A histogram of the calories per elf.
+
+![](README_files/figure-gfm/unnamed-chunk-2-1.png)
 
 [^1]: For the first puzzle, I got up when it was released (6 am where I
     live, so manageable) to maybe have a shot at the leaderboard. Only
