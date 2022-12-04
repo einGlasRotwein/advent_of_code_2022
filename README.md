@@ -41,7 +41,8 @@ Here are some plots for the puzzles.
 
 A histogram of the calories per elf.
 
-![](README_files/figure-gfm/unnamed-chunk-2-1.png)
+<img src="README_files/figure-gfm/unnamed-chunk-2-1.png"
+data-fig-align="center" />
 
 [^1]: For the first puzzle, I got up when it was released (6 am where I
     live, so manageable) to maybe have a shot at the leaderboard. Only
