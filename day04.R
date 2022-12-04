@@ -3,10 +3,7 @@
 
 day4 <- readLines("inputs/day04.txt")
 
-day4 <- strsplit(day4, split = ",")
-
-day4 <- 
-  lapply(day4, function(x) unlist(strsplit(x, split = "-")))
+day4 <- strsplit(day4, split = "[,-]")
 
 overlapping <- 
   sapply(day4, function(x) {
