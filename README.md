@@ -26,18 +26,13 @@ and the beginning and end of part 2 . That means in some occasions, the
 runtime for part 2 will be much shorter because part of the code needed
 to solve part 2 was already run in part 1 .
 
-Day \| Title \| Completion Time \| Rank \| Runtime
-\|\|—————\|—————\|—————\|—————\|—————\|  
-1 \| Calorie Counting \| 00:05:11 (00:07:02) \| 2767 (2329) \| 9.34
-(0.88) ms \|  
-2 \| Rock Paper Scissors \| 00:17:34 (00:24:30) \| 7120 (6282) \| 13.54
-(12.02) ms \|  
-3 \| Rucksack Reorganization \| 00:17:28 (00:29:45) \| 6247 (6570) \|
-13.67 (9.34) ms \|  
-4 \| Camp Cleanup \| 00:06:35 (00:07:24) \| 2348 (1292) \| 19.91 (13.86)
-ms \|  
-5 \| Supply Stacks \| 00:37:57 (00:39:47) \| 7393 (6328) \| 141.13
-(25.05) ms \|
+| Day | Title                   | Completion Time     | Rank        | Runtime           |
+|-----|-------------------------|---------------------|-------------|-------------------|
+| 1   | Calorie Counting        | 00:05:11 (00:07:02) | 2767 (2329) | 9.34 (0.88) ms    |
+| 2   | Rock Paper Scissors     | 00:17:34 (00:24:30) | 7120 (6282) | 13.54 (12.02) ms  |
+| 3   | Rucksack Reorganization | 00:17:28 (00:29:45) | 6247 (6570) | 13.67 (9.34) ms   |
+| 4   | Camp Cleanup            | 00:06:35 (00:07:24) | 2348 (1292) | 19.91 (13.86) ms  |
+| 5   | Supply Stacks           | 00:37:57 (00:39:47) | 7393 (6328) | 141.13 (25.05) ms |
 
 ## Data Viz
 
