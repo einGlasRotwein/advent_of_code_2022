@@ -1,8 +1,6 @@
 
 ## READ IN INPUT ---------------------------------------------------------------
 
-tic <- Sys.time()
-
 day5 <- readLines("inputs/day05.txt")
 
 # Instructions from line 11 onwards
@@ -16,20 +14,34 @@ instructions <-
     as.numeric(trimws(x[x != ""]))
   })
 
-# No point in reading in the crates automatically
+# Note that in my previous solution, I hardcoded the crates, because they 
+# were a massive pain to read in. I was young and really needed these gold 
+# stars within a reasonable time. But since my boss accused me of being a 
+# cheater, here's some ugly code that reads in the crate stack from the 
+# input file. I hope you see this, Gordon.
 
-# Each stack from bottom to top
+# Crates are in line 1 to 8 (ignoring line 9 which numbers the crates)
+effing_crates <- day5[1:8]
+
+# Split characters, because R doesn't index strings
+effing_crates <- strsplit(effing_crates, "")
+
+# Put in a data frame, because the crates are stacked in columns
+effing_crates <- as.data.frame(do.call(rbind, effing_crates))
+
+# Keep columns that contain letters
+letter_cols <- apply(effing_crates, 2, function(x) any(x %in% LETTERS))
+effing_crates <- effing_crates[letter_cols]
+
+# Store columns in a list. While we're at it, remove the spaces, and 
+# also reverse the column, so each vector in the list begins with 
+# the bottom crate (makes it easier to append things later).
 crate_stacks <- 
-  list(
-    c("Q", "M", "G", "C", "L"),
-    c("R", "D", "L", "C", "T", "F", "H", "G"),
-    c("V", "J", "F", "N", "M", "T", "W", "R"),
-    c("J", "F", "D", "V", "Q", "P"),
-    c("N", "F", "M", "S", "L", "B", "T"),
-    c("R", "N", "V", "H", "C", "D", "P"),
-    c("H", "C", "T"),
-    c("G", "S", "J", "V", "Z", "N", "H", "P"),
-    c("Z", "F", "H", "G")
+  lapply(
+    seq_along(effing_crates), 
+    function(i) {
+      rev(effing_crates[,i][effing_crates[,i] != " "])
+    }
   )
 
 ## PART 1 ----------------------------------------------------------------------
@@ -73,8 +85,6 @@ paste0(
 
 # VCTFTJQCG
 
-pt1 <- Sys.time() - tic
-
 ## PART 2 ----------------------------------------------------------------------
 
 # Same, but crates stay in the same order when moved
@@ -117,4 +127,3 @@ paste0(
 )
 
 # GCFGLDNJZ
-pt2 <- Sys.time() - tic

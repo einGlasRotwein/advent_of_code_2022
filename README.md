@@ -32,7 +32,7 @@ to solve part 2 was already run in part 1 .
 | 2   | Rock Paper Scissors     | 00:17:34 (00:24:30) | 7120 (6282) | 13.54 (12.02) ms  |
 | 3   | Rucksack Reorganization | 00:17:28 (00:29:45) | 6247 (6570) | 13.67 (9.34) ms   |
 | 4   | Camp Cleanup            | 00:06:35 (00:07:24) | 2348 (1292) | 19.91 (13.86) ms  |
-| 5   | Supply Stacks           | 00:37:57 (00:39:47) | 7393 (6328) | 141.13 (25.05) ms |
+| 5   | Supply Stacks           | 00:37:57 (00:39:47) | 7393 (6328) | 151.17 (24.45) ms |
 
 ## Data Viz
 
@@ -45,10 +45,10 @@ A histogram of the calories per elf.
 <img src="README_files/figure-gfm/unnamed-chunk-2-1.png"
 data-fig-align="center" style="width:60.0%" />
 
-[^1]: For the first puzzle, I got up when it was released (6 am where I
-    live, so manageable) to maybe have a shot at the leaderboard. Only
-    the first 100 people to solve the puzzle get points. Let’s just say
-    that 5 min completion time is too slow for that :-D
+[^1]: So far, I’ve managed to get up when each puzzle is released (6 am
+    in my time zone, so manageable) to maybe have a shot at the
+    leaderboard. Only the first 100 people to solve the puzzle get
+    points. Sooo … not me :-D
 
 [^2]: I know these stats are basically meaningless for anyone else’s
     computer, but to put things into perspective, here are my computer
