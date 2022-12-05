@@ -45,6 +45,16 @@ A histogram of the calories per elf.
 <img src="README_files/figure-gfm/unnamed-chunk-2-1.png"
 data-fig-align="center" style="width:60.0%" />
 
+### Day 4
+
+Here are the sections each elf(-pair) is covering in green. Overlaps
+between the two elves are plotted in gold. The plot is arranged by
+overlap size, i.e. the two elves with the most overlapping sections are
+on top.
+
+<img src="README_files/figure-gfm/unnamed-chunk-3-1.png"
+data-fig-align="center" style="width:60.0%" />
+
 [^1]: So far, I’ve managed to get up when each puzzle is released (6 am
     in my time zone, so manageable) to maybe have a shot at the
     leaderboard. Only the first 100 people to solve the puzzle get
