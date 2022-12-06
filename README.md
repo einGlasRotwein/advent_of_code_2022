@@ -24,15 +24,18 @@ my code. It’s a crude measure of runtime[^2], where I simply calculate
 the difference in `Sys.time()` at the beginning and the end of part 1,
 and the beginning and end of part 2 . That means in some occasions, the
 runtime for part 2 will be much shorter because part of the code needed
-to solve part 2 was already run in part 1 .
+to solve part 2 was already run in part 1 . Reading and preprocessing
+the data is always part of part 1 (and, if a re-set necessary, also of
+part 2).
 
-| Day | Title                   | Completion Time     | Rank        | Runtime           |
-|-----|-------------------------|---------------------|-------------|-------------------|
-| 1   | Calorie Counting        | 00:05:11 (00:07:02) | 2767 (2329) | 9.34 (0.88) ms    |
-| 2   | Rock Paper Scissors     | 00:17:34 (00:24:30) | 7120 (6282) | 13.54 (12.02) ms  |
-| 3   | Rucksack Reorganization | 00:17:28 (00:29:45) | 6247 (6570) | 13.67 (9.34) ms   |
-| 4   | Camp Cleanup            | 00:06:35 (00:07:24) | 2348 (1292) | 19.91 (13.86) ms  |
-| 5   | Supply Stacks           | 00:37:57 (00:39:47) | 7393 (6328) | 151.17 (24.45) ms |
+| Day | Title                   | Completion Time     | Rank         | Runtime            |
+|-----|-------------------------|---------------------|--------------|--------------------|
+| 1   | Calorie Counting        | 00:05:11 (00:07:02) | 2767 (2329)  | 9.34 (0.88) ms     |
+| 2   | Rock Paper Scissors     | 00:17:34 (00:24:30) | 7120 (6282)  | 13.54 (12.02) ms   |
+| 3   | Rucksack Reorganization | 00:17:28 (00:29:45) | 6247 (6570)  | 13.67 (9.34) ms    |
+| 4   | Camp Cleanup            | 00:06:35 (00:07:24) | 2348 (1292)  | 19.91 (13.86) ms   |
+| 5   | Supply Stacks           | 00:37:57 (00:39:47) | 7393 (6328)  | 151.17 (24.45) ms  |
+| 6   | Tuning Trouble          | 00:14:33 (00:23:03) | 8999 (10772) | 112.93 (152.02) ms |
 
 ## Data Viz
 
