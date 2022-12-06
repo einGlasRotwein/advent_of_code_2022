@@ -3,6 +3,8 @@
 
 day5 <- readLines("inputs/day05.txt")
 
+tic <- Sys.time()
+
 # Instructions from line 11 onwards
 instructions <- day5[11:length(day5)]
 
@@ -85,7 +87,11 @@ paste0(
 
 # VCTFTJQCG
 
+Sys.time() - tic
+
 ## PART 2 ----------------------------------------------------------------------
+
+tic <- Sys.time()
 
 # Same, but crates stay in the same order when moved
 
@@ -127,3 +133,5 @@ paste0(
 )
 
 # GCFGLDNJZ
+
+Sys.time() - tic

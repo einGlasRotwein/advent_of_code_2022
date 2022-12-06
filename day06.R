@@ -3,6 +3,8 @@
 
 day6 <- readLines("inputs/day06.txt")
 
+tic <- Sys.time()
+
 # Split into single characters
 day6 <- unlist(strsplit(day6, ""))
 
@@ -51,7 +53,11 @@ for (i in 0:(nchars - 2)) {
 min(first_unique)
 # 1198
 
+Sys.time() - tic
+
 ## PART 2 ----------------------------------------------------------------------
+
+tic <- Sys.time()
 
 # Same problem, but now for 14 instead of 4 characters
 first_unique <- vector(mode = "numeric")
@@ -76,3 +82,5 @@ for (i in 0:(nchars - 2)) {
 
 min(first_unique, na.rm = TRUE)
 # 3120
+
+Sys.time() - tic

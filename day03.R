@@ -3,6 +3,8 @@
 
 day3 <- readLines("inputs/day03.txt")
 
+tic <- Sys.time()
+
 # split in individual characters
 day3 <-  strsplit(day3, split = "")
 
@@ -23,11 +25,15 @@ score <- c(letters, LETTERS)
 sum(match(target_items, score))
 # 7990
 
+Sys.time() - tic
+
 ## PART 2 ----------------------------------------------------------------------
 
 rm(list = ls())
 
 day3 <- readLines("inputs/day03.txt")
+
+tic <- Sys.time()
 
 # split in individual characters
 day3 <-  strsplit(day3, split = "")
@@ -43,3 +49,5 @@ score <- c(letters, LETTERS)
 
 sum(match(target_items, score))
 # 2602
+
+Sys.time() - tic

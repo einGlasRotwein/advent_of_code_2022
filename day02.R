@@ -11,6 +11,9 @@ library(dplyr)
 # 1 for Rock, 2 for Paper, and 3 for Scissors
 
 day2 <- read.table("inputs/day02.txt")
+
+tic <- Sys.time()
+
 names(day2) <- c("elf", "me")
 
 day2$numeric_elf <- as.numeric(factor(day2$elf))
@@ -33,11 +36,16 @@ day2$score <- day2$numeric_me + day2$outcome
 sum(day2$score)
 # 12156
 
+Sys.time() - tic
+
 ## PART 2 ----------------------------------------------------------------------
 
 rm(list = ls())
 
 day2 <- read.table("inputs/day02.txt")
+
+tic <- Sys.time()
+
 names(day2) <- c("elf", "target_outcome")
 
 day2$n_elf <- as.numeric(factor(day2$elf))
@@ -62,3 +70,5 @@ day2$score <- day2$n_me + day2$outcome
 
 sum(day2$score)
 # 10835
+
+Sys.time() - tic

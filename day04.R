@@ -3,6 +3,8 @@
 
 day4 <- readLines("inputs/day04.txt")
 
+tic <- Sys.time()
+
 day4 <- strsplit(day4, split = "[,-]")
 
 overlapping <- 
@@ -16,7 +18,11 @@ overlapping <-
 sum(overlapping)
 # 459
 
+Sys.time() - tic
+
 ## PART 2 ----------------------------------------------------------------------
+
+tic <- Sys.time()
 
 overlapping <- 
   sapply(day4, function(x) {
@@ -28,3 +34,5 @@ overlapping <-
 
 sum(overlapping)
 # 779
+
+Sys.time() - tic
