@@ -66,63 +66,69 @@ Sys.time() - tic
 
 tic <- Sys.time()
 
-scenic_score <- function(forest, x, y) {
-  location_height <- forest[x, y]
+scenic_score <- function(forest, roi = NULL, coi = NULL) {
   
-  if (y == ncol(forest)) {
-    see_right <- 0
-  } else {
-    see_right <- which(forest[x, (y + 1):ncol(forest)] >= location_height)
-    if (length(see_right) == 0) {
-      see_right <- length(forest[x, (y + 1):ncol(forest)])
+  if (!is.null(roi)) {
+    if (roi == 1 | roi == nrow(forest)) {
+      scenic_score <- 0
     } else {
-      see_right <- min(see_right)
+      forest_slice_before <- day8[1:roi, ]
+      forest_slice_after <- day8[roi:nrow(forest), ]
+      toi <- day8[roi, ] # trees of interest
+      
+      score_up <- 
+        apply(forest_slice_before, 2, function(x) {
+          comparison <- which(x[-length(x)] >= x[length(x)])
+          ifelse(length(comparison) == 0, roi - 1, roi - max(comparison))
+        })
+      
+      score_down <- 
+        apply(forest_slice_after, 2, function(x) {
+          comparison <- which(x[-1] >= x[1])
+          ifelse(length(comparison) == 0, nrow(forest) - roi, min(comparison))
+        })
+      
+      scenic_score <- score_up * score_down
     }
   }
   
-  if (x == nrow(forest)) {
-    see_down <- 0
-  } else {
-    see_down <- which(forest[(x + 1):nrow(forest), y] >= location_height)
-    if (length(see_down) == 0) {
-      see_down <- length(forest[(x + 1):nrow(forest), y])
+  if (!is.null(coi)) {
+    if (coi == 1 | coi == ncol(forest)) {
+      scenic_score <- 0
     } else {
-      see_down <- min(see_down)
+      forest_slice_before <- day8[1:coi]
+      forest_slice_after <- day8[coi:ncol(forest)]
+      toi <- day8[ , coi] # trees of interest
+      
+      score_left <- 
+        apply(forest_slice_before, 1, function(x) {
+          comparison <- which(x[-length(x)] >= x[length(x)])
+          ifelse(length(comparison) == 0, coi - 1, coi - max(comparison))
+        })
+      
+      score_right <- 
+        apply(forest_slice_after, 1, function(x) {
+          comparison <- which(x[-1] >= x[1])
+          ifelse(length(comparison) == 0, ncol(forest) - coi, min(comparison))
+        })
+      
+      scenic_score <- score_left * score_right
     }
   }
   
-  if (y == 1) {
-    see_left <- 0
-  } else {
-    see_left <- which(forest[x, 1:(y - 1)] >= location_height)
-    if (length(see_left) == 0) {
-      see_left <- length(forest[x, 1:(y - 1)])
-    } else {
-      see_left <- y - max(see_left)
-    }
-  }
-  
-  if (x == 1) {
-    see_up <- 0
-  } else {
-    see_up <- which(forest[1:(x - 1), y] >= location_height)
-    if (length(see_up) == 0) {
-      see_up <- length(forest[1:(x - 1), y])
-    } else {
-      see_up <- x - max(see_up)
-    }
-  }
-  
-  scenic_score <- see_right * see_left * see_down * see_up
   return(scenic_score)
 }
 
 scenic_map <- day8
 
-for (x in 1:nrow(day8)) {
-  for (y in 1:ncol(day8)) {
-    scenic_map[x, y] <- scenic_score(day8, x, y)
-  }
+scenic_score(day8, roi = 20)
+
+for (i in 1:nrow(day8)) {
+  scenic_map[i, ] <- scenic_score(day8, roi = i)
+}
+
+for (i in 1:ncol(day8)) {
+  scenic_map[ , i] <- scenic_map[ , i] * scenic_score(day8, coi = i)
 }
 
 max(scenic_map)
