@@ -64,6 +64,14 @@ on top.
 <img src="README_files/figure-gfm/unnamed-chunk-3-1.png"
 data-fig-align="center" style="width:50.0%" />
 
+### Day 8
+
+A map of the forest of day 8. The brighter the colour, the higher the
+tree.
+
+<img src="README_files/figure-gfm/unnamed-chunk-5-1.png"
+data-fig-align="center" style="width:50.0%" />
+
 [^1]: So far, I’ve managed to get up when each puzzle is released (6 am
     in my time zone, so manageable) to maybe have a shot at the
     leaderboard. Only the first 100 people to solve the puzzle get
