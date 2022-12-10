@@ -1,5 +1,5 @@
 
-# day7 <- readLines("inputs/day07_exp.txt") # test with example data
+# day7 <- readLines("inputs/day07_ex.txt") # test with example data
 day7 <- readLines("inputs/day07.txt")
 
 ## META LEVEL DESCRIPTION ------------------------------------------------------
