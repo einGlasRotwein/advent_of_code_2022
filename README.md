@@ -74,7 +74,24 @@ tree.
 <img src="README_files/figure-gfm/unnamed-chunk-5-1.png"
 data-fig-align="center" style="width:50.0%" />
 
+### Day 9
+
+Here is an animation[^4] of all the locations all knots visited. The
+current position of the knots in each iteration are plotted in green,
+and the locations the tail already visited are highlighted in gold. I am
+not happy with the speed of the gif, but any attempt on making it faster
+resulted in too many green points plotted at the same time (it was
+already a fight to have the gold line stay, but have the correct number
+of green points popping up at the same time) - or in the gold line going
+crazy. If anyone knows how to improve the situation, feel free to slide
+into my dms!
+
+<img src="day09_anim_full.gif" data-fig-align="center" style="width:50.0%" />
+
 ### Day 10
+
+Here is the message that is displayed on my “screen” at the end of day
+10.
 
 <img src="README_files/figure-gfm/unnamed-chunk-6-1.png"
 data-fig-align="center" style="width:50.0%" />
@@ -90,3 +107,6 @@ data-fig-align="center" style="width:50.0%" />
 
 [^3]: For part 2, I’m saving every single position of every single knot
     for a fancy animation later.
+
+[^4]: How long does it take to render that beast, you wonder? It takes
+    “cleaning a small bathroom thoroughly” minutes.
