@@ -1,0 +1,220 @@
+---
+title: "README"
+format: gfm
+editor: source
+execute:
+  echo: false
+  warning: false
+  message: false
+fig-dpi: 300
+---
+
+```{r}
+library(tidyverse)
+
+library(showtext)
+font_add_google(name = "Source Code Pro", family = "source-code")
+showtext_opts(dpi = 200)
+
+aoc_green <- "#009900"
+aoc_gold <- "#ffff66"
+github_grey <- "#0d1117"
+
+# AoC-ish plot theme that blends into the GitHub dark mode
+aoc_theme <- 
+  theme(
+    panel.background = element_rect(fill = NA, colour = NA, size = 1),
+    panel.grid = element_blank(),
+    plot.background = element_rect(fill = github_grey, colour = github_grey),
+    plot.title = element_text(colour = "white", size = 20, family = "source-code"),
+    strip.background = element_rect(fill = NA, colour = NA),
+    strip.text = element_text(size = 16, colour = aoc_green),
+    axis.text = element_text(size = 12, colour = "white", family = "source-code"),
+    axis.title = element_text(size = 14, colour = "white", family = "source-code"),
+    axis.line = element_line(colour = "white", size = .5),
+    axis.ticks = element_line(colour = "white", size = .5),
+    legend.position = "none"
+  )
+```
+
+# Advent of Code 2022
+
+This repo contains my solutions for the [Advent of Code](https://adventofcode.com/) 2022 in `R`.
+This is my 3rd AoC; in 2020, I got 31 stars; in 2021, I got 33 stars.
+Let's see whether I can manage at least 35 this year :-)
+
+Follow me on [Mastodon](https://fosstodon.org/@juli_nagel), where I will post about my solutions as well!
+
+## TOC
+
+The scripts for my solutions are named after the respective day (e.g. `day01.R`).
+The corresponding inputs (`day01.txt`) can be found in the folder `inputs`.
+Here is a table of contents showing you what each day was about, along with some stats.
+Completion time refers to the time it took me to complete the puzzle since release (part 1, and part 2 in brackets), as tracked on the Advent of Code website[^1].
+Next is my rank for the puzzle on that day (part 1 (part 2)), and finally the runtime of my code.
+It's a crude measure of runtime[^2], where I simply calculate the difference in `Sys.time()` at the beginning and the end of part 1, and the beginning and end of part 2
+. That means in some occasions, the runtime for part 2 will be much shorter because part of the code needed to solve part 2 was already run in part 1
+. Reading and preprocessing the data is always part of part 1 (and, if a re-set necessary, also of part 2)
+.
+
+[^1]: Until day 8, I managed to get up when each puzzle is released (6 am in my time zone, so manageable) and to complete them before I had to leave for work. That wasn't possible anymore afterwards.
+
+[^2]: I know these stats are basically meaningless for anyone else's computer, but to put things into perspective, here are my computer stats: Razer Blade 15 Base Model, Intel Core i7-10750H CPU \@ 2.60GHz, 259 Mhz, 6 Cores, 12 Logical Processors, 16 GB RAM
+
+Day 7 almost broke me.
+I wrote some ugly ass code and barely managed to make it work before I had to start my *actual* work.
+I ain't pretty, but it gets the gold stars in.
+
+| Day | Title                   | Completion Time     | Rank          | Runtime            |
+|---------------|---------------|---------------|---------------|---------------|
+| 1   | Calorie Counting        | 00:05:11 (00:07:02) | 2767 (2329)   | 9.34 (0.88) ms     |
+| 2   | Rock Paper Scissors     | 00:17:34 (00:24:30) | 7120 (6282)   | 13.54 (12.02) ms   |
+| 3   | Rucksack Reorganization | 00:17:28 (00:29:45) | 6247 (6570)   | 13.67 (9.34) ms    |
+| 4   | Camp Cleanup            | 00:06:35 (00:07:24) | 2348 (1292)   | 19.91 (13.86) ms   |
+| 5   | Supply Stacks           | 00:37:57 (00:39:47) | 7393 (6328)   | 151.17 (24.45) ms  |
+| 6   | Tuning Trouble          | 00:14:33 (00:23:03) | 8999 (10772)  | 112.93 (152.02) ms |
+| 7   | No Space Left On Device | 02:26:18 (03:38:11) | 13307 (16347) | 105.27 (4.02) ms   |
+| 8   | Treetop Tree House      | 00:39:33 (01:29:45) | 7446 (9576)   | 566.91 (729.69) ms |
+| 9   | Rope Bridge      | 02:45:47 (15:44:12) | 15774 (37468)   | 1.52 s (1.76 min[^3]) |
+| 10   | Cathode-Ray Tube      | 04:29:34 (05:07:57) | 21235 (19194)   | 16.83 (24.69) ms |
+
+[^3]: For part 2, I'm saving every single position of every single knot for a fancy animation later.
+
+## Data Viz
+
+Here are some plots for the puzzles.
+
+### Day 1
+
+A histogram of the calories per elf.
+
+```{r fig.showtext=TRUE, fig.align='center', out.width='50%'}
+source("day01.R")
+
+ggplot() + 
+  aes(calorie_sums) + 
+  geom_histogram(colour = aoc_green, fill = aoc_green, alpha = .5, bins = 50) +
+  labs(x = "calories per elf", title = "Calorie Counting") +
+  aoc_theme
+```
+
+### Day 4
+
+Here are the sections each elf(-pair) is covering in green.
+Overlaps between the two elves are plotted in gold.
+The plot is arranged by overlap size, i.e. the two elves with the most overlapping sections are on top.
+
+```{r fig.showtext=TRUE, fig.align='center', out.width='50%'}
+source("day04.R")
+
+# Create a data frame for plotting.
+# x axis: location
+# y axis: elf pair id
+
+# Since we want to do a geom_segment, we only need start
+# and end
+day4 <- as.data.frame(do.call(rbind, day4))
+names(day4) <- 
+  paste0(rep(c("elf1", "elf2"), each = 2), c("_from", "_to"))
+
+day4 <- 
+  day4 %>% 
+  mutate(across(everything(), as.numeric))
+
+# I want to highlight the overlapping area in gold, and sort by
+# overlap.
+day4$overlap_from <- NA
+day4$overlap_to <- NA
+day4$overlap_size <- NA
+
+for (i in 1:nrow(day4)) {
+  elf1 <- day4$elf1_from[i]:day4$elf1_to[i]
+  elf2 <- day4$elf2_from[i]:day4$elf2_to[i]
+  
+  overlap <- intersect(elf1, elf2)
+  
+  if (length(overlap) != 0) {
+    day4$overlap_from[i] <- min(overlap)
+    day4$overlap_to[i] <- max(overlap)
+    day4$overlap_size[i] <- length(overlap)
+  } else {
+    day4$overlap_from[i] <- NA
+    day4$overlap_to[i] <- NA
+    day4$overlap_size[i] <- 0
+  }
+}
+
+day4 <- day4 %>% arrange(overlap_size)
+
+day4$elf_pair <- 1:nrow(day4)
+
+day4 %>% 
+  ggplot() +
+  # elf 1
+  geom_segment(
+    aes(x = elf1_from, xend = elf1_to, y = elf_pair, yend = elf_pair), colour = aoc_green, alpha = .5
+  ) +
+  # elf 2
+  geom_segment(
+    aes(x = elf2_from, xend = elf2_to, y = elf_pair, yend = elf_pair), colour = aoc_green, alpha = .5
+  ) +
+  # overlap
+  geom_segment(
+    aes(x = overlap_from, xend = overlap_to, y = elf_pair, yend = elf_pair), colour = aoc_gold
+  ) +
+  labs(y = "elf pair (reordered)", x = "section", title = "Camp Cleanup") +
+  aoc_theme
+```
+
+### Day 8
+
+A map of the forest of day 8.
+The brighter the colour, the higher the tree.
+
+```{r}
+day8 <- readLines("inputs/day08.txt")
+day8 <- strsplit(day8, "")
+day8 <- lapply(day8, as.numeric)
+day8 <- as.data.frame(do.call(rbind, day8))
+
+day8 <- 
+  data.frame(
+    height = unlist(day8),
+    x = rep(1:nrow(day8), ncol(day8)),
+    y = rep(1:ncol(day8), each = nrow(day8))
+  )
+```
+
+```{r fig.showtext=TRUE, fig.align='center', out.width='50%'}
+day8 %>% 
+  ggplot(aes(x = x, y = y, alpha = height)) +
+  geom_point(colour = aoc_green) +
+  labs(title = "Treetop Tree House") +
+  aoc_theme +
+  theme(
+    legend.text = element_blank(),
+    legend.title = element_blank(),
+    axis.line = element_blank(),
+    axis.ticks = element_blank(),
+    axis.text = element_blank(),
+    axis.title = element_blank()
+  )
+```
+
+### Day 9
+
+Here is an animation[^4] of all the locations all knots visited. The current position of the knots in each iteration are plotted in green, and the locations the tail already visited are highlighted in gold. I am not happy with the speed of the gif, but any attempt on making it faster resulted in too many green points plotted at the same time (it was already a fight to have the gold line stay, but have the correct number of green points popping up at the same time) - or in the gold line going crazy. If anyone knows how to improve the situation, feel free to slide into my dms!
+
+<img src="day09_anim_full.gif" data-fig-align="center" style="width:50.0%" />
+
+[^4]: How long does it take to render that beast, you wonder? It takes "cleaning a small bathroom thoroughly" minutes.
+
+### Day 10
+
+Here is the message that is displayed on my "screen" at the end of day 10.
+
+```{r fig.showtext=TRUE, fig.align='center', out.width='50%'}
+source("day10.R")
+
+day10_plot
+```
