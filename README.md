@@ -43,6 +43,7 @@ it gets the gold stars in.
 | 7   | No Space Left On Device | 02:26:18 (03:38:11) | 13307 (16347) | 105.27 (4.02) ms      |
 | 8   | Treetop Tree House      | 00:39:33 (01:29:45) | 7446 (9576)   | 566.91 (729.69) ms    |
 | 9   | Rope Bridge             | 02:45:47 (15:44:12) | 15774 (37468) | 1.52 s (1.76 min[^3]) |
+| 10  | Cathode-Ray Tube        | 04:29:34 (05:07:57) | 21235 (19194) | 16.83 (24.69) ms      |
 
 ## Data Viz
 
@@ -73,10 +74,14 @@ tree.
 <img src="README_files/figure-gfm/unnamed-chunk-5-1.png"
 data-fig-align="center" style="width:50.0%" />
 
-[^1]: So far, I’ve managed to get up when each puzzle is released (6 am
-    in my time zone, so manageable) to maybe have a shot at the
-    leaderboard. Only the first 100 people to solve the puzzle get
-    points. Sooo … not me :-D
+### Day 10
+
+<img src="README_files/figure-gfm/unnamed-chunk-6-1.png"
+data-fig-align="center" style="width:50.0%" />
+
+[^1]: Until day 8, I managed to get up when each puzzle is released (6
+    am in my time zone, so manageable) and to complete them before I had
+    to leave for work. That wasn’t possible anymore afterwards.
 
 [^2]: I know these stats are basically meaningless for anyone else’s
     computer, but to put things into perspective, here are my computer
