@@ -44,6 +44,7 @@ it gets the gold stars in.
 | 8   | Treetop Tree House      | 00:39:33 (01:29:45) | 7446 (9576)   | 566.91 (729.69) ms    |
 | 9   | Rope Bridge             | 02:45:47 (15:44:12) | 15774 (37468) | 1.52 s (1.76 min[^3]) |
 | 10  | Cathode-Ray Tube        | 04:29:34 (05:07:57) | 21235 (19194) | 16.83 (24.69) ms      |
+| 11  | Monkey in the Middle    | 09:59:28 (10:12:38) | 30462 (22506) | 56.51 ms (1.67 s)     |
 
 ## Data Viz
 
