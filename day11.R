@@ -94,7 +94,6 @@ for (i_round in 1:n_rounds) {
     for (k_item in items[[j_monkey]]) {
       old <- k_item
       temp_worry <- eval(operations[[j_monkey]])
-      # CHANGE STH HERE!
       temp_worry <- temp_worry %% lcm_monkey
       if (temp_worry %% test[j_monkey] == 0) {
         items[[true_throw[j_monkey]]] <- c(items[[true_throw[j_monkey]]], temp_worry)
