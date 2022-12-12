@@ -45,6 +45,7 @@ it gets the gold stars in.
 | 9   | Rope Bridge             | 02:45:47 (15:44:12) | 15774 (37468) | 1.52 s (1.76 min[^3]) |
 | 10  | Cathode-Ray Tube        | 04:29:34 (05:07:57) | 21235 (19194) | 16.83 (24.69) ms      |
 | 11  | Monkey in the Middle    | 09:59:28 (10:12:38) | 30462 (22506) | 56.51 ms (1.67 s)     |
+| 12  | Hill Climbing Algorithm | 03:20:46 (03:34:46) | 10025 (9739)  | 3.43 (7.53) min[^4]   |
 
 ## Data Viz
 
@@ -77,7 +78,7 @@ data-fig-align="center" style="width:50.0%" />
 
 ### Day 9
 
-Here is an animation[^4] of all the locations all knots visited. The
+Here is an animation[^5] of all the locations all knots visited. The
 current position of the knots in each iteration are plotted in green,
 and the locations the tail already visited are highlighted in gold. I am
 not happy with the speed of the gif, but any attempt on making it faster
@@ -110,4 +111,7 @@ data-fig-align="center" style="width:50.0%" />
     for a fancy animation later.
 
 [^4]: How long does it take to render that beast, you wonder? It takes
+    “cleaning a small bathroom thoroughly” minutes.
+
+[^5]: How long does it take to render that beast, you wonder? It takes
     “cleaning a small bathroom thoroughly” minutes.
