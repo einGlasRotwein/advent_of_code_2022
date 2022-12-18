@@ -46,6 +46,9 @@ it gets the gold stars in.
 | 10  | Cathode-Ray Tube        | 04:29:34 (05:07:57) | 21235 (19194) | 16.83 (24.69) ms      |
 | 11  | Monkey in the Middle    | 09:59:28 (10:12:38) | 30462 (22506) | 56.51 ms (1.67 s)     |
 | 12  | Hill Climbing Algorithm | 03:20:46 (03:34:46) | 10025 (9739)  | 3.43 (7.53) min[^4]   |
+| 13  | Distress Signal         | — (—)               | — (—)         | — (—)                 |
+| 14  | Regolith Reservoir      | 01:32:53 (02:07:21) | 6397 (6771)   | 0.40 (17.40) s        |
+| 15  | Beacon Exclusion Zone   | \>24h (\>24h)       | 32120 (27136) | 0.12 s (7.66 min)     |
 
 ## Data Viz
 
@@ -55,8 +58,8 @@ Here are some plots for the puzzles.
 
 A histogram of the calories per elf.
 
-<img src="README_files/figure-gfm/unnamed-chunk-2-1.png"
-data-fig-align="center" style="width:50.0%" />
+<img src="README_files/figure-commonmark/unnamed-chunk-2-1.png"
+style="width:50.0%" data-fig-align="center" />
 
 ### Day 4
 
@@ -65,16 +68,16 @@ between the two elves are plotted in gold. The plot is arranged by
 overlap size, i.e. the two elves with the most overlapping sections are
 on top.
 
-<img src="README_files/figure-gfm/unnamed-chunk-3-1.png"
-data-fig-align="center" style="width:50.0%" />
+<img src="README_files/figure-commonmark/unnamed-chunk-3-1.png"
+style="width:50.0%" data-fig-align="center" />
 
 ### Day 8
 
 A map of the forest of day 8. The brighter the colour, the higher the
 tree.
 
-<img src="README_files/figure-gfm/unnamed-chunk-5-1.png"
-data-fig-align="center" style="width:50.0%" />
+<img src="README_files/figure-commonmark/unnamed-chunk-5-1.png"
+style="width:50.0%" data-fig-align="center" />
 
 ### Day 9
 
@@ -95,8 +98,8 @@ into my dms!
 Here is the message that is displayed on my “screen” at the end of day
 10.
 
-<img src="README_files/figure-gfm/unnamed-chunk-6-1.png"
-data-fig-align="center" style="width:50.0%" />
+<img src="README_files/figure-commonmark/unnamed-chunk-6-1.png"
+style="width:50.0%" data-fig-align="center" />
 
 [^1]: Until day 8, I managed to get up when each puzzle is released (6
     am in my time zone, so manageable) and to complete them before I had

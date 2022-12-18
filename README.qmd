@@ -79,6 +79,9 @@ I ain't pretty, but it gets the gold stars in.
 | 10   | Cathode-Ray Tube      | 04:29:34 (05:07:57) | 21235 (19194)   | 16.83 (24.69) ms |
 | 11   | Monkey in the Middle      | 09:59:28 (10:12:38) | 30462 (22506)   | 56.51 ms (1.67 s) |
 | 12   | Hill Climbing Algorithm      | 03:20:46 (03:34:46) | 10025 (9739)   | 3.43 (7.53) min[^4] |
+| 13   | Distress Signal      | --- (---) | --- (---)   | --- (---) |
+| 14   | Regolith Reservoir      | 01:32:53 (02:07:21) | 6397 (6771)   | 0.40 (17.40) s |
+| 15   | Beacon Exclusion Zone      | >24h (>24h) | 32120 (27136)   | 0.12 s (7.66 min) |
 
 [^3]: For part 2, I'm saving every single position of every single knot for a fancy animation later.
 
