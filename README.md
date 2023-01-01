@@ -49,6 +49,9 @@ it gets the gold stars in.
 | 13  | Distress Signal         | — (—)               | — (—)         | — (—)                 |
 | 14  | Regolith Reservoir      | 01:32:53 (02:07:21) | 6397 (6771)   | 0.40 (17.40) s        |
 | 15  | Beacon Exclusion Zone   | \>24h (\>24h)       | 32120 (27136) | 0.12 s (7.66 min)     |
+| 16  | Proboscidea Volcanium   | \- (-)              | \- (-)        | \- (-)                |
+| 17  | Pyroclastic Flow        | \>24h (\>24h)       | 21811 (-)     | 5.25 s (-)            |
+| 18  | Boiling Boulders        | \>24h (\>24h)       | 26807 (-)     | 2.18 s (-)            |
 
 ## Data Viz
 
